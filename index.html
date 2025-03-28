@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bus Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" class="theme-switch-label"></label>
+            </div>
+            <h1>🚌 Smart Bus Tracker</h1>
+            <p>Real-time bus tracking made simple</p>
+        </header>
+
+        <form id="busForm" class="search-form">
+            <div class="form-group">
+                <label for="location">From:</label>
+                <div class="select-wrapper">
+                    <select id="location" required>
+                        <option value="">Select your location</option>
+                        <option value="downtown">Downtown</option>
+                        <option value="airport">Airport</option>
+                        <option value="mall">Shopping Mall</option>
+                        <option value="university">University</option>
+                        <option value="station">Train Station</option>
+                        <option value="beach">Beach</option>
+                        <option value="business">Business District</option>
+                        <option value="sports">Sports Complex</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="destination">To:</label>
+                <div class="select-wrapper">
+                    <select id="destination" required>
+                        <option value="">Select your destination</option>
+                        <option value="downtown">Downtown</option>
+                        <option value="airport">Airport</option>
+                        <option value="mall">Shopping Mall</option>
+                        <option value="university">University</option>
+                        <option value="station">Train Station</option>
+                        <option value="beach">Beach</option>
+                        <option value="business">Business District</option>
+                        <option value="sports">Sports Complex</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="search-button">
+                <span class="button-icon">🔍</span>
+                Find Buses
+            </button>
+        </form>
+
+        <div id="results" class="results-container" style="display: none;">
+            <h2>Available Buses</h2>
+            <div class="bus-cards" id="busCards">
+                <!-- Bus cards will be populated here -->
+            </div>
+        </div>
+
+        <div id="liveTrackImage" class="live-track-container" style="display: none;">
+            <div class="live-track-header">
+                <h3>Live Tracking</h3>
+                <button class="close-button" onclick="closeLiveTrack()">×</button>
+            </div>
+            <div class="live-track-content">
+                <img id="selectedBusImage" src="" alt="Bus Location" />
+                <div class="live-track-info">
+                    <p>Bus is currently in transit</p>
+                    <div class="pulse-dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>©️ 2024 Smart Bus Tracker | Real-time Updates</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
